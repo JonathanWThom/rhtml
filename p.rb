@@ -1,4 +1,4 @@
-class Paragraph < Element
+class P < Element
 	def opening_tag
 		"<p>"
 	end
