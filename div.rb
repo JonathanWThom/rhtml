@@ -1,9 +1,5 @@
 class Div < Element
-	def opening_tag
-		"<div>"
-	end
-
-	def closing_tag
-		"</div>"
+	def tag
+		"div"
 	end
 end

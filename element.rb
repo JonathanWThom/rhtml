@@ -24,12 +24,16 @@ class Element
 			end
 		end.join("")
 	end
-
-	def opening_tag
+	
+	def tag
 		raise NotImplementedError
 	end
 
+	def opening_tag
+		"<#{tag}>"
+	end
+
 	def closing_tag
-		raise NotImplementedError
+		"</#{tag}>"
 	end
 end

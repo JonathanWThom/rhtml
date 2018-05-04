@@ -1,9 +1,5 @@
 class P < Element
-	def opening_tag
-		"<p>"
-	end
-
-	def closing_tag
-		"</p>"
+	def tag
+		"p"
 	end
 end
