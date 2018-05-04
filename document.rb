@@ -1,15 +1,11 @@
-class Document
-	attr_reader :elements
-
-	def initialize(elements)
-		@elements = [elements].flatten
+class Document < Element
+	def opening_tag
+		# TODO handle title and other header stuff
+		"<!DOCTYPE><html><head><title>Title Goes Here</title></head><body>"
 	end
 
-	def render
-		top = "<!DOCTYPE><html><head><title>Title Goes Here</title></head>"
-		body = "<body>#{elements.map(&:render).join("")}</body>"
-		footer = "</html>"
-		top + body + footer
+	def closing_tag
+		"</body></html>"
 	end
 
 	def render_to_file(path)
