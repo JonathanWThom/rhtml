@@ -61,7 +61,7 @@ Document.new(Div.new("Hello World")).render_to_file("hello_world.html")
 
 So much!
 
-- Build out all other elements.
+- Build out all other elements. See the current list of supported elements [here](https://github.com/JonathanWThom/rhtml/blob/master/rhtml.rb).
 - Ability to customize header in `Document` class.
 - Each element + `Document` should have its own set of tests.
 - Allow for HTML attributes with Ruby, not just by writing gross strings.
