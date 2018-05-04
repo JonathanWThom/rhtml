@@ -5,6 +5,12 @@ class Element
 		@elements = elements
 	end
 
+	def add_elements(*new_elements)
+		new_elements.each do |element|
+			@elements.push(element)
+		end
+	end
+
 	def render
 		 opening_tag + rendered_elements + closing_tag
 	end
