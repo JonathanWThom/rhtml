@@ -1,8 +1,8 @@
 class Div
-	attr_reader :content
+	attr_reader :elements
 
-	def initialize(content)
-		@content = content
+	def initialize(elements)
+		@elements = [elements].flatten
 	end
 
 	def start_tag
@@ -14,6 +14,17 @@ class Div
 	end
 	
 	def render
-		start_tag + content + end_tag
+		# TODO: NEED TO HANDLE NON ELEMENT CONTENT TOO
+		start_tag + rendered_elements + end_tag
+	end
+	
+	def rendered_elements
+		elements.map do |element|
+			if element.is_a? String
+				element
+			else
+				element.render
+			end
+		end.join("")
 	end
 end

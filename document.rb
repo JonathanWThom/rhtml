@@ -2,7 +2,7 @@ class Document
 	attr_reader :elements
 
 	def initialize(elements)
-		@elements = elements
+		@elements = [elements].flatten
 	end
 
 	def render
