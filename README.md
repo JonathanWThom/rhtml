@@ -65,6 +65,7 @@ So much!
 - Ability to customize header in `Document` class.
 - Each element + `Document` should have its own set of tests.
 - Allow for HTML attributes with Ruby, not just by writing gross strings.
+- Allow for adding CSS classes to elements, again, not just by writing gross strings.
 - Gemify it.
 
 ### Contributing
