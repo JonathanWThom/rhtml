@@ -2,7 +2,7 @@
 
 A (totally unnecessary) HTML document builder in Ruby.
 
-### Implentation
+### Implementation
 
 Eventually, this will be a gem, but for now you can do:
 
