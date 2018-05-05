@@ -1,15 +1,15 @@
 elements = %w(
-	Div 
-	P 
-	H1 
-	H2 
-	H3 
-	H4 
-	H5 
-	H6 
-	Img 
-	Script 
-	Style 
+	Div
+	P
+	H1
+	H2
+	H3
+	H4
+	H5
+	H6
+	Img
+	Script
+	Style
 	Title
 	Link
 	Meta

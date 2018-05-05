@@ -1,3 +1,3 @@
-module Rhtml
+module RubyHtml
 	VERSION = "0.0.2"
 end

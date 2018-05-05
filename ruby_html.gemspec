@@ -1,10 +1,10 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "rhtml/version"
+require "ruby_html/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "rhtml"
+  spec.name          = "ruby_html"
   spec.version       = Rhtml::VERSION
   spec.authors       = ["Jonathan Thom"]
   spec.email         = ["jonathan.thom1990@gmail"]
