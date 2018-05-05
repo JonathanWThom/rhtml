@@ -27,7 +27,7 @@ class Element
 	end
 	
 	def tag
-		raise NotImplementedError
+		self.class.name.downcase
 	end
 
 	def opening_tag
