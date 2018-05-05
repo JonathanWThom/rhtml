@@ -58,7 +58,7 @@ p_with_class.render
 ```
 
 Most importantly, if you want to actually create an HTML page, you'll want to create a `Document` that holds all of your elements.
-A document recieves elements, as well as header elements (such as `<title>`, or `<style>`). 
+A document recieves elements, as well as header elements (such as `<title>` or `<style>`). 
 
 ```
 title = Title.new("Page Title")
@@ -78,8 +78,6 @@ Document.new.render_to_file("hello_world.html")
 So much!
 
 - Build out all other elements. See the current list of supported elements [here](https://github.com/JonathanWThom/rhtml/blob/master/elements/elements.rb).
-- Update docs with better examples, and instructions on how to add attributes.
-- Ability to customize header in `Document` class.
 - Tests! 
 - Gemify it.
 
