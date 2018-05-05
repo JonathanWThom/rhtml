@@ -12,8 +12,9 @@ class Element
 		end
 	end
 
-	def add_attribute
-		#TODO
+	def add_attribute(attribute_hash)
+		@attributes.merge!(attribute_hash)
+		## TODO: Account for adding elements that already exist.
 	end
 
 	def render
