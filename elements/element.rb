@@ -12,6 +12,10 @@ class Element
 		end
 	end
 
+	def add_attribute
+		#TODO
+	end
+
 	def render
 		 opening_tag + rendered_elements + closing_tag
 	end
@@ -31,7 +35,11 @@ class Element
 	end
 
 	def opening_tag
-		"<#{tag} #{rendered_attributes}>"
+		if rendered_attributes
+			"<#{tag} #{rendered_attributes}>"
+		else
+			"<#{tag}"
+		end
 	end
 
 	def closing_tag
