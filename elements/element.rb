@@ -1,8 +1,9 @@
 class Element
 	attr_reader :elements
 
-	def initialize(*elements)
+	def initialize(*elements, attributes: {})
 		@elements = elements
+		@attributes = attributes
 	end
 
 	def add_elements(*new_elements)
