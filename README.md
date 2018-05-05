@@ -87,7 +87,3 @@ So much!
 2. Clone it
 3. Make a PR. 
 4. Be kind to others. Programming is fun.
-
-### License
-
-MIT 
