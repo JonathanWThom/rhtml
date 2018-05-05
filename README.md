@@ -67,7 +67,7 @@ title = Title.new("Page Title")
 Document.new(Div.new, header_elements: [title])
 ```
 
-`Document` has a special method, `#render_to_file` that recieves a file path, and creates your html document there.
+`Document` has a special method, `#render_to_file` that receives a file path, and creates your html document there.
 
 ```
 Document.new.render_to_file("hello_world.html")
@@ -78,7 +78,9 @@ Document.new.render_to_file("hello_world.html")
 ### TODO
 
 - Build out remaining elements. There are a few that conflict with ruby (such as `Object`).
-- Tests!
+- Code clean up (alphabetical order, some methods probably don't need to be public, etc).
+- The single quotes for attributes are a bit weird, and you might not always want those.
+- It desperately needs some tests!
 
 ### Contributing
 
