@@ -1,20 +1,22 @@
 # Ruby HTML
 
-A (totally unnecessary) HTML document builder in Ruby.
+An HTML document builder in Ruby.
 
 ### Installation
 
-Eventually, this will be a gem, but for now you can do:
+Add this line to your application's Gemfile:
 
-```
-git clone https://github.com/jonathanwthom/ruby_html.git
-cd rhtml
-irb
-require_relative "ruby_html"
+```ruby
+gem "ruby_html"
 ```
 
-Or you can include the rhtml directory in a project, and
-require it there.
+And then execute:
+
+    $ bundle
+
+Or install it yourself as:
+
+    $ gem install ruby_html
 
 ### How to Use It
 
@@ -75,11 +77,8 @@ Document.new.render_to_file("hello_world.html")
 
 ### TODO
 
-So much!
-
-- Build out all other elements. See the current list of supported elements [here](https://github.com/JonathanWThom/rhtml/blob/master/elements/elements.rb).
+- Build out remaining elements. There are a few that conflict with ruby (such as `Object`).
 - Tests!
-- Gemify it.
 
 ### Contributing
 
