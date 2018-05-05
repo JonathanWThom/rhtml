@@ -1,5 +1,5 @@
 class Element
-	attr_reader :elements
+	attr_reader :elements, :attributes
 
 	def initialize(*elements, attributes: {})
 		@elements = elements
@@ -31,10 +31,16 @@ class Element
 	end
 
 	def opening_tag
-		"<#{tag}>"
+		"<#{tag} #{rendered_attributes}>"
 	end
 
 	def closing_tag
 		"</#{tag}>"
+	end
+
+	def rendered_attributes
+		attributes.map do |k, v|
+			"#{k}='#{v}'"
+		end.join(" ")
 	end
 end
