@@ -5,7 +5,7 @@ require "ruby_html/version"
 
 Gem::Specification.new do |spec|
   spec.name          = "ruby_html"
-  spec.version       = Rhtml::VERSION
+  spec.version       = RubyHtml::VERSION
   spec.authors       = ["Jonathan Thom"]
   spec.email         = ["jonathan.thom1990@gmail"]
   spec.description   = %{Build HTML with Ruby}
