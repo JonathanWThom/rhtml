@@ -35,10 +35,10 @@ class Element
 	end
 
 	def opening_tag
-		if rendered_attributes
+		if rendered_attributes != ""
 			"<#{tag} #{rendered_attributes}>"
 		else
-			"<#{tag}"
+			"<#{tag}>"
 		end
 	end
 
