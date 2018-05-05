@@ -20,7 +20,7 @@ Or install it yourself as:
 
 ### How to Use It
 
-HTML element classes have the names you think they would. For example, to create a div:
+HTML elements have the names you think they would. For example, to create a div:
 
 ```
 div = Div.new
