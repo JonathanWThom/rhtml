@@ -1,4 +1,4 @@
-elements = %w(
+HTML::ELEMENTS = %w(
 	Div
 	P
 	H1
@@ -113,7 +113,7 @@ elements = %w(
 	Template
 )
 
-elements.each do |klass_name|
+HTML::ELEMENTS.each do |klass_name|
   klass = Class.new(HTML::Element)
   HTML.const_set(klass_name, klass)
 end
