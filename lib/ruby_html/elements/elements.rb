@@ -114,6 +114,6 @@ elements = %w(
 )
 
 elements.each do |klass_name|
-  klass = Class.new(Element)
-  Object.const_set(klass_name, klass)
+  klass = Class.new(HTML::Element)
+  HTML.const_set(klass_name, klass)
 end

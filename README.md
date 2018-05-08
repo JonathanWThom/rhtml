@@ -23,14 +23,14 @@ Or install it yourself as:
 HTML elements have the names you think they would. For example, to create a div:
 
 ```
-div = Div.new
+div = HTML::Div.new
 ```
 
 Elements can receive arguments. These can be strings, or can be other elements themselves.
 These elements will be nested under their parent.
 
 ```
-div = Div.new("Hello", P.new("World"))
+div = HTML::Div.new("Hello", P.new("World"))
 ```
 
 You can also add new elements to a previously created element with `#add_elements`, which accepts any number of arguments.
@@ -46,7 +46,7 @@ All elements have a method `#render`, which prints all the element's contents (c
 contained within.
 
 ```
-div = Div.new(H6.new("Hello"), "World")
+div = HTML::Div.new(H6.new("Hello"), "World")
 div.render
 => "<div><h6>Hello</h6>World</div>"
 ```
@@ -54,7 +54,7 @@ div.render
 To add attributes to an element, pass a hash to the object like so:
 
 ```
-p_with_class = P.new("Hello World", attributes: { "class": "red" })
+p_with_class = HTML::P.new("Hello World", attributes: { "class": "red" })
 p_with_class.render
 => <p class='red'>Hello World</p>
 ```
@@ -63,21 +63,22 @@ Most importantly, if you want to actually create an HTML page, you'll want to cr
 A document recieves elements, as well as header elements (such as `<title>` or `<style>`).
 
 ```
-title = Title.new("Page Title")
-Document.new(Div.new, header_elements: [title])
+title = HTML::Title.new("Page Title")
+Document.new(HTML::Div.new, header_elements: [title])
 ```
 
 `Document` has a special method, `#render_to_file` that receives a file path, and creates your html document there.
 
 ```
-Document.new.render_to_file("hello_world.html")
+HTML::Document.new.render_to_file("hello_world.html")
 => creates html document
 ```
 
 
 ### TODO
 
-- Build out remaining elements. There are a few that conflict with ruby (such as `Object`).
+- Build out remaining elements. There are a few that conflict with ruby (such as `Object`). This should not be an issue anymore
+now that the `HTML` namespace has been added.
 - Code clean up (alphabetical order, some methods probably don't need to be public, etc).
 - The single quotes for attributes are a bit weird, and you might not always want those.
 - It desperately needs some tests!
