@@ -33,7 +33,7 @@ module HTML
 		end
 		
 		def tag
-			self.class.name.downcase
+			self.class.to_s.split('::').last.downcase
 		end
 
 		def opening_tag
