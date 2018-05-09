@@ -9,8 +9,22 @@ RSpec.shared_examples "HTML element" do |element|
 			klass.new
 		end.to_not raise_error 
   	end
+	
+	context "when passed string content" do
+		let(:object) { klass.new("Hello World") }
 
-	it "can be created with string content" do
+		it "can be created" do
+			expect(object).to_not eq nil
+		end
+
+		describe "#render" do
+			it "returns the correct string" do
+				subject { object.render }
+				tag = element.downcase
+				rendered = "<#{tag}>Hello World</#{tag}>"
+				is_expected.to eq rendered
+			end
+		end
 	end
 
 	it "can be created with another element as content" do
@@ -23,10 +37,10 @@ RSpec.shared_examples "HTML element" do |element|
 	end
 
 	describe "#render" do
-		it "returns a string" do
+		it "returns the correct string" do
 		end
 
-		it "returns the correct string" do
+		it "returns the correct string when passed a string argument" do
 		end
 
 		it "returns the correct string when it has attributes" do
