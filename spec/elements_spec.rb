@@ -1,4 +1,5 @@
 require "spec_helper"
+
 RSpec.shared_examples "HTML element" do |element|
 	let(:klass) do
 		Object.const_get("HTML::#{element}")

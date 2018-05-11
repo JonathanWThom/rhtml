@@ -30,14 +30,14 @@ Elements can receive arguments. These can be strings, or can be other elements t
 These elements will be nested under their parent.
 
 ```
-div = HTML::Div.new("Hello", P.new("World"))
+div = HTML::Div.new("Hello", HTML::P.new("World"))
 ```
 
 You can also add new elements to a previously created element with `#add_elements`, which accepts any number of arguments.
 
 ```
 div.add_elements("Hello")
-div.add_elements("Hello", "From", H3.new("Earth"))
+div.add_elements("Hello", "From", HTML::H3.new("Earth"))
 ```
 
 You can pass the same element as an argument as many times as you want - just like a partial or component.
@@ -46,7 +46,7 @@ All elements have a method `#render`, which prints all the element's contents (c
 contained within.
 
 ```
-div = HTML::Div.new(H6.new("Hello"), "World")
+div = HTML::Div.new(HTML::H6.new("Hello"), "World")
 div.render
 => "<div><h6>Hello</h6>World</div>"
 ```
@@ -81,7 +81,6 @@ HTML::Document.new.render_to_file("hello_world.html")
 now that the `HTML` namespace has been added.
 - Code clean up (alphabetical order, some methods probably don't need to be public, etc).
 - The single quotes for attributes are a bit weird, and you might not always want those.
-- It desperately needs some tests!
 
 ### Contributing
 

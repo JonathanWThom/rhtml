@@ -24,5 +24,9 @@ module HTML
 		def render_to_file(path)
 			File.open(path, "w") { |file| file.write(render) }
 		end
+
+        def add_attribute(arg)
+            raise NotImplementedError
+        end
 	end
 end
