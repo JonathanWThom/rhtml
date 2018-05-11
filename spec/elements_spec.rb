@@ -3,8 +3,9 @@ RSpec.shared_examples "HTML element" do |element|
 	let(:klass) do
 		Object.const_get("HTML::#{element}")
 	end
-	
-		
+
+    let(:tag) { element.downcase }
+    	
   	it "can be created" do
 		expect do
 			klass.new
@@ -17,11 +18,12 @@ RSpec.shared_examples "HTML element" do |element|
 		it "can be created" do
 			expect(el).to_not eq nil
 		end
-
-		it "returns the correct string" do
-			tag = element.downcase
-			rendered = "<#{tag}>Hello World</#{tag}>"
-			expect(el.render).to eq rendered
+		
+		describe "#render" do
+			it "returns the correct string" do
+				rendered = "<#{tag}>Hello World</#{tag}>"
+				expect(el.render).to eq rendered
+			end
 		end
 	end
 	
@@ -33,8 +35,12 @@ RSpec.shared_examples "HTML element" do |element|
 			expect(el).to_not eq nil
 		end
 		
-		it "returns the correct string" do
-		end
+		describe "#render" do	
+		    it "returns the correct string" do
+                rendered = "<#{tag}><#{tag}></#{tag}></#{tag}>"
+                expect(el.render).to eq rendered
+            end
+        end
 	end
 
 	context "when passed multiple elements as content" do
@@ -45,7 +51,9 @@ RSpec.shared_examples "HTML element" do |element|
 		end
 		
 		it "returns the correct string" do
-		end
+		    rendered = "<#{tag}><#{tag}></#{tag}><#{tag}></#{tag}></#{tag}>"
+            expect(el.render).to eq rendered
+        end
 	end
 	
 	context "when passed attributes" do
@@ -56,11 +64,17 @@ RSpec.shared_examples "HTML element" do |element|
 		end
 
 		it "returns the correct string" do
+            rendered = "<#{tag} class='red'><#{tag}></#{tag}></#{tag}>"   
+            expect(el.render).to eq rendered
 		end
 	end
 
 	describe "#add_attribute" do
 		it "will append an attribute" do
+            el = klass.new
+            el.add_attribute({"id": "some-id"})
+            rendered = "<#{tag} id='some-id'></#{tag}>"
+            expect(el.render).to eq rendered
 		end
 	end
 end
