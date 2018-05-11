@@ -3,47 +3,59 @@ RSpec.shared_examples "HTML element" do |element|
 	let(:klass) do
 		Object.const_get("HTML::#{element}")
 	end
-
+	
+		
   	it "can be created" do
 		expect do
 			klass.new
 		end.to_not raise_error 
   	end
 	
-	context "when passed string content" do
-		let(:object) { klass.new("Hello World") }
+	context "when passed a string" do
+		let(:el) { klass.new("Hello World") }
+	
+		it "can be created" do
+			expect(el).to_not eq nil
+		end
+
+		it "returns the correct string" do
+			tag = element.downcase
+			rendered = "<#{tag}>Hello World</#{tag}>"
+			expect(el.render).to eq rendered
+		end
+	end
+	
+	context "when passed another element as content" do
+		let(:el) { klass.new(klass.new) }
+	
 
 		it "can be created" do
-			expect(object).to_not eq nil
+			expect(el).to_not eq nil
 		end
-
-		describe "#render" do
-			it "returns the correct string" do
-				subject { object.render }
-				tag = element.downcase
-				rendered = "<#{tag}>Hello World</#{tag}>"
-				is_expected.to eq rendered
-			end
-		end
-	end
-
-	it "can be created with another element as content" do
-	end
-
-	it "can be created with multiple elements as content" do
-	end
-
-	it "can be created with attributes" do
-	end
-
-	describe "#render" do
+		
 		it "returns the correct string" do
 		end
+	end
 
-		it "returns the correct string when passed a string argument" do
+	context "when passed multiple elements as content" do
+		let(:el) { klass.new(klass.new, klass.new) }
+	
+		it "can be created" do
+			expect(el).to_not eq nil
+		end
+		
+		it "returns the correct string" do
+		end
+	end
+	
+	context "when passed attributes" do
+		let(:el) { klass.new(klass.new, attributes: { "class": "red" }) }
+
+		it "can be created" do
+			expect(el).to_not eq nil 
 		end
 
-		it "returns the correct string when it has attributes" do
+		it "returns the correct string" do
 		end
 	end
 
