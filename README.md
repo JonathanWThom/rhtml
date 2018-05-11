@@ -81,6 +81,7 @@ HTML::Document.new.render_to_file("hello_world.html")
 now that the `HTML` namespace has been added.
 - Code clean up (alphabetical order, some methods probably don't need to be public, etc).
 - The single quotes for attributes are a bit weird, and you might not always want those.
+- Example in the docs of how to use with Rails, and maybe a full document built with ruby_html.
 
 ### Contributing
 
